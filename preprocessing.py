@@ -21,7 +21,8 @@ attr.pop(-1)
 for at in attr:
     plt.figure()
     plt.hist(df0[at])
-    plt.hist(df1[at])
+    plt.hist(df1[at], alpha=0.5)
+    plt.title("at")
     plt.show()
     a = a+1
 '''
