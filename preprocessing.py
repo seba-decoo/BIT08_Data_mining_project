@@ -45,6 +45,6 @@ for at in attr:
 
 plt.tight_layout() 
 #plt.show() #show the figure
-plt.savefig('Images/hist.png') #save figure in directory #save figure to Image directory
+plt.savefig('Images/hist.png') #save figure in directory 
 
 
