@@ -43,25 +43,4 @@ for at in attr:
         a += 1
 plt.show()
 
-'''
-
-
-#histogram
-
-print(attr)
-#plot histograms
-
-# plot with various axes scales
-plt.figure()
-
-for i in attr:
-    #plt.subplot()
-    plt.hist(ds[i])
-    #plt.grid(True)
-    
-
-plt.show()
-
-'''
-
 
