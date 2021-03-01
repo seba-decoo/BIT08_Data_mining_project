@@ -36,7 +36,7 @@ for at in attr:
     plt.subplot2grid((4,4), (a,b))
     plt.hist(df0[at])
     plt.hist(df1[at], alpha=0.5)
-     plt.title("at")
+    plt.title(at)
     #plt.grid(False)
     b += 1
     if b == 4:
