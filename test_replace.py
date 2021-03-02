@@ -22,4 +22,9 @@ print(ds)
 ds.to_csv("heart_preprocessed.csv", sep=",", index=False)
 
 
+#encode categorie attributes
+#link to expanation
+#https://scikit-learn.org/stable/modules/preprocessing.html (6.3.4)
+
+
 
