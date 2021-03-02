@@ -9,6 +9,7 @@
 import pandas
 from sklearn import tree
 import sklearn
+import matplotlib.pyplot as plt
 #load data
 
 ds = pandas.read_csv("heart.csv",)
@@ -25,10 +26,10 @@ y = ds['target']
 from sklearn.model_selection import train_test_split
 #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
-decision_tree = DecisionTreeClassifier(random_state=1234)
+decision_tree = DecisionTreeClassifier(random_state=0)
 decision_tree = decision_tree.fit(X, y)
-
 tree.plot_tree(decision_tree)
+plt.show()
 #tree.export_text(decision_tree)
 '''
 r = export_text(decision_tree, feature_names= X.columns)
