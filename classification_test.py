@@ -24,9 +24,10 @@ from sklearn.tree import export_text
 from sklearn.model_selection import train_test_split
 
 #load data
-ds = pandas.read_csv("heart.csv",)
+ds = pandas.read_csv("heart_preprocessed.csv",)
 
 ##construct classification tree
+'''
 #encode categorial values when needed
 from category_encoders import OrdinalEncoder
 # Categorical boolean mask
@@ -34,7 +35,7 @@ categorical_feature_mask = ds.dtypes==object
 # filter categorical columns using mask and turn it into a list
 categorical_cols = ds.columns[categorical_feature_mask].tolist()
 ds= OrdinalEncoder(cols=categorical_cols).fit_transform(ds)
-
+'''
 #define X and y value
 X = ds.drop('target', axis=1)
 y = ds['target']

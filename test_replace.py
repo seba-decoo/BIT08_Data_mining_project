@@ -8,17 +8,26 @@ ds = pandas.read_csv("heart.csv")
 
 print(ds)
 
-ds["sex"].replace({0:"F", 1:"M"}, inplace=True)
-ds["cp"].replace({0:"typ_ang", 1:"atyp_ang", 2:"non-ang_pain", 3:"asymp"}, inplace= True)
-ds["fbs"].replace({1:True, 0:False}, inplace=True)
-ds["restecg"].replace({0:"normal", 1:"ST-T", 2:"LV_hyper"}, inplace= True)
-ds["exang"].replace({0:"no", 1:"yes"}, inplace=True)
-ds["slope"].replace({0:"UP", 1:"FL", 2:"DW" }, inplace= True)
-ds["thal"].replace({1:"normal", 2:"fix_defect", 3:"revers_defect" }, inplace= True)
-ds["target"].replace({0:"less_chance", 1:"more_chance"}, inplace=True)
-
+#ds["sex"].replace({0:"F", 1:"M"}, inplace=True)
+ds["sex"] = ds["sex"].astype("category")
+#ds["cp"].replace({0:"typ_ang", 1:"atyp_ang", 2:"non-ang_pain", 3:"asymp"}, inplace= True)
+ds["cp"] = ds["cp"].astype("category")
+#ds["fbs"].replace({1:True, 0:False}, inplace=True)
+ds["fbs"] = ds["fbs"].astype("category")
+#ds["restecg"].replace({0:"normal", 1:"ST-T", 2:"LV_hyper"}, inplace= True)
+ds["restecg"] = ds["restecg"].astype("category")
+#ds["exang"].replace({0:"no", 1:"yes"}, inplace=True)
+ds["exang"] = ds["exang"].astype("category")
+#ds["slope"].replace({0:"UP", 1:"FL", 2:"DW" }, inplace= True)
+ds["slope"] = ds["slope"].astype("category")
+#ds["thal"].replace({1:"normal", 2:"fix_defect", 3:"revers_defect" }, inplace= True)
+ds["thal"] = ds["thal"].astype("category")
+#ds["target"].replace({0:"less_chance", 1:"more_chance"}, inplace=True)
+ds["target"] = ds["target"].astype("category")
 
 print(ds)
+
+print(ds.dtypes)
 
 ds.to_csv("heart_preprocessed.csv", sep=",", index=False)
 '''

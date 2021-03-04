@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #specify dataset
-ds = pandas.read_csv("heart.csv")
+ds = pandas.read_csv("heart_preprocessed.csv")
 #make dataframe based on target (0,1)
 df0= ds[ds["target"] == 0]
 df1= ds[ds["target"] == 1]
