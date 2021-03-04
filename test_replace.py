@@ -15,13 +15,13 @@ ds["restecg"].replace({0:"normal", 1:"ST-T", 2:"LV_hyper"}, inplace= True)
 ds["exang"].replace({0:"no", 1:"yes"}, inplace=True)
 ds["slope"].replace({0:"UP", 1:"FL", 2:"DW" }, inplace= True)
 ds["thal"].replace({1:"normal", 2:"fix_defect", 3:"revers_defect" }, inplace= True)
-ds["target"].replace({0:"less_change", 1:"more_change"}, inplace=True)
+ds["target"].replace({0:"less_chance", 1:"more_chance"}, inplace=True)
 
 
 print(ds)
 
 ds.to_csv("heart_preprocessed.csv", sep=",", index=False)
-
+'''
 ##construct classification tree
 #define X and y value
 X = ds.drop('target', axis=1)
@@ -73,7 +73,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
-'''
+
 ##################################################################
 #encode categorie attributes
 #link to expanation
