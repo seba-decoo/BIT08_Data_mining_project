@@ -27,6 +27,7 @@ from sklearn.model_selection import train_test_split
 ds = pandas.read_csv("heart_preprocessed.csv",)
 
 ##construct classification tree
+
 '''
 #encode categorial values when needed
 from category_encoders import OrdinalEncoder
@@ -35,6 +36,7 @@ categorical_feature_mask = ds.dtypes==object
 # filter categorical columns using mask and turn it into a list
 categorical_cols = ds.columns[categorical_feature_mask].tolist()
 ds= OrdinalEncoder(cols=categorical_cols).fit_transform(ds)
+
 '''
 #define X and y value
 X = ds.drop('target', axis=1)
@@ -72,3 +74,4 @@ print("Matrix:")
 print(confusion_matrix(y_test, y_pred), "\n")
 print("QUALITY REPORT:")
 print(classification_report(y_test, y_pred))
+

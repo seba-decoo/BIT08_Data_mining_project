@@ -3,11 +3,12 @@
 
 from os import sep
 import pandas
+from sklearn import preprocessing
 
 ds = pandas.read_csv("heart.csv")
 
 print(ds)
-
+'''
 #ds["sex"].replace({0:"F", 1:"M"}, inplace=True)
 ds["sex"] = ds["sex"].astype("category")
 #ds["cp"].replace({0:"typ_ang", 1:"atyp_ang", 2:"non-ang_pain", 3:"asymp"}, inplace= True)
@@ -28,7 +29,14 @@ ds["target"] = ds["target"].astype("category")
 print(ds)
 
 print(ds.dtypes)
+'''
 
+
+ohe = preprocessing.OneHotEncoder(sparse = False)
+
+ohe.fit_transform(ds[["sex"]])[:5]
+
+print(ds["sex"])
 ds.to_csv("heart_preprocessed.csv", sep=",", index=False)
 '''
 ##construct classification tree
