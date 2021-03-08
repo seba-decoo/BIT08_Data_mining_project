@@ -14,9 +14,11 @@ y = kmeans.predict(dfnt)
 dist = kmeans.transform(dfnt)
 
 plt.scatter(dist[:,[0]],dist[:,[1]], c=y, cmap="PRGn")
+plt.title("predicted target class")
 plt.show()
 
 plt.scatter(dist[:,[0]],dist[:,[1]], c=df["target"], cmap="PRGn")
+plt.title("actual target class")
 plt.show()
 
 print(kmeans.cluster_centers_)
