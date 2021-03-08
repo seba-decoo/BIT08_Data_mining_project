@@ -1,6 +1,7 @@
 import sklearn.cluster as cluster
 import matplotlib.pyplot as plt
 import pandas
+import matplotlib.gridspec as gridspec
 
 # Reading in data from CSV
 df = pandas.read_csv("heart.csv")
@@ -24,14 +25,17 @@ for att in dfnt:
     for a2 in dfnt:
         plt.subplot2grid((14,14),(a,b))
         plt.scatter(dfnt[att],dfnt[a2],c=y, cmap="prism", s=5,marker=".")
-        plt.xlabel(att) # kan mss weg indien niet te vinden hoe size kan verbeterd worden
+        plt.xlabel(att, )# kan mss weg indien niet te vinden hoe size kan verbeterd worden
         plt.ylabel(a2) # zie boven
+        plt.yticks([])
+        plt.xticks([])
         #plt.show()
         b += 1
         if b == 13:
             b = 0
             a += 1
-plt.tight_layout()
+
+#plt.tight_layout()
 plt.show()
 
 """
