@@ -9,11 +9,32 @@ df = pandas.read_csv("heart.csv")
 # Removing the class attribute for unsupervised clustering
 dfnt = df.drop(columns=["target"])
 
+#determine amount of clusters
+kmeans_kwargs = {
+    "init": "random",
+    "n_init": 10,
+    "max_iter": 300,
+    "random_state": 42,
+}
+
+# A list holds the SSE values for each k
+sse = []
+for k in range(1, 21):
+    kmeans = cluster.KMeans(n_clusters=k, **kmeans_kwargs)
+    kmeans.fit(dfnt)
+    sse.append(kmeans.inertia_)
+
+plt.style.use("fivethirtyeight")
+plt.plot(range(1, 21), sse)
+plt.xticks(range(1, 21))
+plt.xlabel("Number of Clusters")
+plt.ylabel("SSE")
+plt.show()
+
 #clustering
 kmeans = cluster.KMeans(n_clusters=2).fit(dfnt)
 y = kmeans.predict(dfnt)
-dist = kmeans.transform(dfnt)
-
+'''
 # script to go over all attributes and plot them against each other. try to do this for kmeans. can be compared to weka
 print(dfnt)
 
@@ -52,6 +73,6 @@ plt.show()
 
 print(kmeans.cluster_centers_)
 """
-
+'''
 
 
