@@ -65,11 +65,12 @@ for att in dfnt:
 
         # label y 
         if ax.is_first_col():
-            ax.set_ylabel(a2, fontsize = 9)
+            ax.set_ylabel(att, fontsize = 9)
 
         # label x 
-        if ax.is_last_row():
-            ax.set_xlabel(att, fontsize = 9)
+        if ax.is_first_row():
+            ax.xaxis.set_label_position('top')
+            ax.set_xlabel(a2, fontsize = 9)
         a += 1
 plt.show()
         
