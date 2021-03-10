@@ -63,6 +63,7 @@ for k in range(2, 11):
     clust_lib[score] = k
 
 ##Plot silhouette coefficients
+plt.figure(figsize=[10,10])
 plt.style.use("fivethirtyeight")
 plt.plot(range(2, 11), silhouette_coefficients)
 plt.xticks(range(2, 11))
