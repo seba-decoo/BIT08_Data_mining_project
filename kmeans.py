@@ -20,7 +20,9 @@ print(dfnt)
 a = 0
 b = 0
 
-plt.figure(figsize=[200,200])
+plt.figure(figsize=[200,200], constrained_layout=True)
+#spec2 = gridspec.GridSpec(ncols=14, nrows=14, figure=fig)
+
 for att in dfnt:
     for a2 in dfnt:
         plt.subplot2grid((14,14),(a,b))
@@ -37,6 +39,7 @@ for att in dfnt:
 
 #plt.tight_layout()
 plt.show()
+plt.savefig('Images/kmeans.png') #save figure in directory 
 
 """
 plt.scatter(dist[:,[0]],dist[:,[1]], c=y, cmap="PRGn")
