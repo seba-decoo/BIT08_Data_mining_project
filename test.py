@@ -56,12 +56,20 @@ fig = plt.figure(figsize=[16,9])
 a=0
 for att in dfnt:
     for a2 in dfnt:
-        fig.add_subplot(spec2[a])
+        ax = fig.add_subplot(spec2[a])
         plt.scatter(dfnt[att],dfnt[a2],c=y, cmap="prism", s=5,marker=".")
-        plt.xlabel(att, )# kan mss weg indien niet te vinden hoe size kan verbeterd worden
-        plt.ylabel(a2) # zie boven
+        #plt.xlabel(att, )# kan mss weg indien niet te vinden hoe size kan verbeterd worden
+        #plt.ylabel(a2) # zie boven
         plt.yticks([])
         plt.xticks([])
+
+        # label y 
+        if ax.is_first_col():
+            ax.set_ylabel(a2, fontsize = 9)
+
+        # label x 
+        if ax.is_last_row():
+            ax.set_xlabel(att, fontsize = 9)
         a += 1
 plt.show()
         
