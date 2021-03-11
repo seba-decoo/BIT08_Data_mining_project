@@ -1,0 +1,71 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 2 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     heart-weka.filters.unsupervised.attribute.NumericToNominal-R1,4,5,8,10-V
+Instances:    303
+Attributes:   14
+              age
+              sex
+              cp
+              trestbps
+              chol
+              fbs
+              restecg
+              thalach
+              exang
+              oldpeak
+              slope
+              ca
+              thal
+              target
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 840.3332659941505
+
+Initial starting points (random):
+
+Cluster 0: 44,1,2,140,235,0,0,180,0,0,2,0,2,1
+Cluster 1: 67,1,0,120,237,0,1,71,0,1,1,0,2,0
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1
+               (303.0)    (173.0)    (130.0)
+============================================
+age            54.3663    52.5491    56.7846
+sex                  1          1          1
+cp                   0          2          0
+trestbps      131.6238   129.3584   134.6385
+chol           246.264   245.5838   247.1692
+fbs                  0          0          0
+restecg              1          0          1
+thalach       149.6469   160.1792   135.6308
+exang                0          0          1
+oldpeak         1.0396     0.5584       1.68
+slope                2          2          1
+ca                   0          0          0
+thal                 2          2          3
+target               1          1          0
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      173 ( 57%)
+1      130 ( 43%)
+

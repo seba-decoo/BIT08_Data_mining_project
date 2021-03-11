@@ -8,6 +8,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from matplotlib.gridspec import GridSpec
+import numpy as np
 import pandas
 import sklearn.cluster as cluster
 from sklearn.metrics import silhouette_score
@@ -22,26 +23,7 @@ dfnt = df.drop(columns=["target"])
 #Determine amount of clusters
 ####################################################################################################
 print("DETERMINATING THE AMOUNT OF CLUSTERS\n...\n...")
-'''
-#elbow method
-# A list holds the SSE values for each k
-sse = []
-for k in range(1, 11):
-    kmeans = cluster.KMeans(n_clusters=k, **kmeans_kwargs)
-    kmeans.fit(dfnt)
-    sse.append(kmeans.inertia_)
-plt.style.use("fivethirtyeight")
-plt.plot(range(1, 11), sse)
-plt.xticks(range(1, 11))
-plt.xlabel("Number of Clusters")
-plt.ylabel("SSE")
-plt.show()
-#kneeLocator
-kl = KneeLocator(
-    range(1, 11), sse, curve="convex", direction="decreasing"
-)
-print(kl.elbow)
-'''
+
 ##Silhouette coefficient
 kmeans_kwargs = {
     "init": "random",
@@ -68,8 +50,8 @@ plt.plot(range(2, 11), silhouette_coefficients)
 plt.xticks(range(2, 11))
 plt.xlabel("Number of Clusters")
 plt.ylabel("Silhouette Coefficient")
-plt.show() #show script during executing
-#plt.savefig('Images/silhouette_coefficient.png') #save figure in directory 
+#plt.show() #show script during executing
+plt.savefig('Images/silhouette_coefficient.png') #save figure in directory 
 
 #Determine nr of clusters for kmeans clustering
 nr_clusters= clust_lib[max(silhouette_coefficients)]
@@ -116,8 +98,51 @@ for att in dfnt:
             ax.set_xlabel(a2, fontsize = 9)
         a += 1
 
-plt.show()
-#plt.savefig('Images/kmeans.png') #save figure in directory 
+#plt.show()
+plt.savefig('Images/kmeans.png') #save figure in directory 
 #Instructions to results
 print("CLUSTERING TERMINATED\n...\n...")
 print("The silhouette plot and the clustering output are saved in the Images folder.\n")
+
+####################################################################################################
+#Clustering prediction
+####################################################################################################
+
+print("CLUSTERING PREDICTION:\n")
+
+#Calculate procent (in)correct
+y_in = 0
+actual = (df["target"])
+correct = 0
+incorrect = 0
+
+correct_0 = 0
+correct_1 = 0
+incorrect_0 = 0
+incorrect_1 = 0
+
+for act in actual:
+    if act == y[y_in]:
+        correct += 1
+        if act == 0:
+            correct_0 += 1
+        else:
+            correct_1 += 1
+    else:
+        incorrect += 1
+        if act == 0:
+            incorrect_0 += 1
+        else:
+            incorrect_1 += 1
+    y_in += 1
+
+#Print procent (in)correct
+print("Procent correct: \t{:.2f}%".format(correct/3.03))
+print("Procent incorrect: \t{:.2f}%\n".format(incorrect/3.03))
+
+##Constructing confusion matrix
+print("\t0\'\t1\'")
+print("="*50)
+print("\t{}\t{}\t 0 = decreased chance".format(correct_0,incorrect_0))
+print("\t{}\t{}\t 1 = increased chance".format(correct_1,incorrect_1))
+print("="*50)
