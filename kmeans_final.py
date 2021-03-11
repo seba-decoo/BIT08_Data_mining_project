@@ -44,7 +44,7 @@ for k in range(2, 11):
     clust_lib[score] = k
 
 ##Plot silhouette coefficients
-sil = plt.figure(figsize=[10,10])
+sil = plt.figure(figsize=[10,5])
 #plt.style.use("fivethirtyeight")   ### Applying stylesheet causes all plots to use the stylesheet
 plt.plot(range(2, 11), silhouette_coefficients)
 plt.xticks(range(2, 11))
@@ -108,7 +108,7 @@ print("The silhouette plot and the clustering output are saved in the Images fol
 #Clustering prediction
 ####################################################################################################
 
-print("CLUSTERING PREDICTION:\n")
+print("CLUSTERING EVALUATION:\n")
 
 #Calculate procent (in)correct
 y_in = 0
