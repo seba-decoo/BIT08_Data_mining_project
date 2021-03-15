@@ -1,0 +1,180 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     heart-weka.filters.unsupervised.attribute.NumericToNominal-R1,4,5,8,10-V-weka.filters.unsupervised.attribute.Discretize-F-B17-M-1.0-R4,10-precision6-weka.filters.unsupervised.attribute.Discretize-F-B17-M-1.0-R5-precision6
+Instances:    302
+Attributes:   14
+              age
+              sex
+              cp
+              trestbps
+              chol
+              fbs
+              restecg
+              thalach
+              exang
+              oldpeak
+              slope
+              ca
+              thal
+              target
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                       Class
+Attribute                  0        1
+                      (0.46)   (0.54)
+======================================
+age
+  mean                   56.6  52.3756
+  std. dev.            7.9344   9.4875
+  weight sum              138      164
+  precision               1.2      1.2
+
+sex
+  0                      25.0     72.0
+  1                     115.0     94.0
+  [total]               140.0    166.0
+
+cp
+  0                     105.0     40.0
+  1                      10.0     42.0
+  2                      19.0     69.0
+  3                       8.0     17.0
+  [total]               142.0    168.0
+
+trestbps
+  '(-inf-109]'            5.0     17.0
+  '(109-111]'            12.0      9.0
+  '(111-119]'             9.0     13.0
+  '(119-121]'            15.0     24.0
+  '(121-124.5]'           7.0      6.0
+  '(124.5-127]'          10.0      6.0
+  '(127-129.5]'           7.0      8.0
+  '(129.5-131]'          14.0     24.0
+  '(131-134.5]'           9.0      6.0
+  '(134.5-137]'           4.0      7.0
+  '(137-139]'             4.0     11.0
+  '(139-141]'            16.0     18.0
+  '(141-149]'            10.0      6.0
+  '(149-151]'             9.0     10.0
+  '(151-158]'             5.0      5.0
+  '(158-167.5]'           9.0      6.0
+  '(167.5-inf)'          10.0      5.0
+  [total]               155.0    181.0
+
+chol
+  '(-inf-176.5]'         10.0     10.0
+  '(176.5-194]'           9.0     11.0
+  '(194-202]'             5.0     15.0
+  '(202-208.5]'           9.0     10.0
+  '(208.5-215.5]'         5.0     14.0
+  '(215.5-223.5]'         7.0     13.0
+  '(223.5-230.5]'        11.0      8.0
+  '(230.5-235.5]'         7.0     12.0
+  '(235.5-243.5]'         8.0     12.0
+  '(243.5-251]'           9.0     12.0
+  '(251-259.5]'          12.0      8.0
+  '(259.5-268.5]'         8.0     12.0
+  '(268.5-276.5]'        10.0      9.0
+  '(276.5-289.5]'        15.0      6.0
+  '(289.5-304.5]'         9.0     11.0
+  '(304.5-323.5]'        10.0      9.0
+  '(323.5-inf)'          11.0      9.0
+  [total]               155.0    181.0
+
+fbs
+  0                     117.0    142.0
+  1                      23.0     24.0
+  [total]               140.0    166.0
+
+restecg
+  0                      80.0     68.0
+  1                      57.0     97.0
+  2                       4.0      2.0
+  [total]               141.0    167.0
+
+thalach
+  mean               139.1005  158.407
+  std. dev.           22.5146  19.1493
+  weight sum              138      164
+  precision            1.4556   1.4556
+
+exang
+  0                      63.0    142.0
+  1                      77.0     24.0
+  [total]               140.0    166.0
+
+oldpeak
+  '(-inf-0.05]'          26.0     75.0
+  '(0.05-0.15]'           4.0      5.0
+  '(0.15-0.25]'           4.0     10.0
+  '(0.25-0.45]'           3.0     11.0
+  '(0.45-0.65]'           6.0     15.0
+  '(0.65-0.85]'           7.0      9.0
+  '(0.85-1.05]'          13.0      6.0
+  '(1.05-1.25]'          11.0     10.0
+  '(1.25-1.45]'           8.0      8.0
+  '(1.45-1.7]'            6.0     11.0
+  '(1.7-1.85]'            8.0      4.0
+  '(1.85-2.05]'          11.0      5.0
+  '(2.05-2.45]'           8.0      4.0
+  '(2.45-2.7]'            8.0      2.0
+  '(2.7-3.05]'           12.0      2.0
+  '(3.05-3.7]'           11.0      2.0
+  '(3.7-inf)'             9.0      2.0
+  [total]               155.0    181.0
+
+slope
+  0                      13.0     10.0
+  1                      92.0     49.0
+  2                      36.0    108.0
+  [total]               141.0    167.0
+
+ca
+  0                      46.0    130.0
+  1                      45.0     22.0
+  2                      32.0      8.0
+  3                      18.0      4.0
+  4                       2.0      5.0
+  [total]               143.0    169.0
+
+thal
+  0                       2.0      2.0
+  1                      13.0      7.0
+  2                      37.0    131.0
+  3                      90.0     28.0
+  [total]               142.0    168.0
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         249               82.4503 %
+Incorrectly Classified Instances        53               17.5497 %
+Kappa statistic                          0.645 
+Mean absolute error                      0.1918
+Root mean squared error                  0.3683
+Relative absolute error                 38.6427 %
+Root relative squared error             73.9379 %
+Total Number of Instances              302     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.783    0.140    0.824      0.783    0.803      0.646    0.905     0.897     0
+                 0.860    0.217    0.825      0.860    0.842      0.646    0.905     0.908     1
+Weighted Avg.    0.825    0.182    0.825      0.825    0.824      0.646    0.905     0.903     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 108  30 |   a = 0
+  23 141 |   b = 1
+
