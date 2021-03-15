@@ -1,0 +1,19 @@
+@relation 'heart-weka.filters.unsupervised.attribute.NumericToNominal-R1,4,5,8,10-V-weka.filters.unsupervised.attribute.Discretize-F-B17-M-1.0-R4,10-precision6'
+
+@attribute age numeric
+@attribute sex {0,1}
+@attribute cp {0,1,2,3}
+@attribute trestbps {'\'(-inf-109]\'','\'(109-111]\'','\'(111-119]\'','\'(119-121]\'','\'(121-124.5]\'','\'(124.5-127]\'','\'(127-129.5]\'','\'(129.5-131]\'','\'(131-134.5]\'','\'(134.5-137]\'','\'(137-139]\'','\'(139-141]\'','\'(141-149]\'','\'(149-151]\'','\'(151-158]\'','\'(158-167.5]\'','\'(167.5-inf)\''}
+@attribute chol numeric
+@attribute fbs {0,1}
+@attribute restecg {0,1,2}
+@attribute thalach numeric
+@attribute exang {0,1}
+@attribute oldpeak {'\'(-inf-0.05]\'','\'(0.05-0.15]\'','\'(0.15-0.25]\'','\'(0.25-0.45]\'','\'(0.45-0.65]\'','\'(0.65-0.85]\'','\'(0.85-1.05]\'','\'(1.05-1.25]\'','\'(1.25-1.45]\'','\'(1.45-1.7]\'','\'(1.7-1.85]\'','\'(1.85-2.05]\'','\'(2.05-2.45]\'','\'(2.45-2.7]\'','\'(2.7-3.05]\'','\'(3.05-3.7]\'','\'(3.7-inf)\''}
+@attribute slope {0,1,2}
+@attribute ca {0,1,2,3,4}
+@attribute thal {0,1,2,3}
+@attribute target {0,1}
+
+@data
+53,0,1,'\'(149-151]\'',203,1,0,150,1,'\'(1.25-1.45]\'',0,2,2,1
