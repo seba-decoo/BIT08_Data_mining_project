@@ -1,5 +1,5 @@
 # BIT08_Data_mining_project
-Repository for data_mining python script for BIT08 Data_mining@howest
+Repository used for the project of BIT08 Data_mining@howest
 
 ***Cache folder:***
 
